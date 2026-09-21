@@ -108,3 +108,18 @@ footer{border-top:1px solid var(--line);padding:45px 0 20px;background:#fff}
  .hero-art{min-height:330px}.hero-cat{font-size:10rem;right:10%}.hero-note{font-size:1.1rem}.hero-badge{left:5%;bottom:7%}
  .section{padding:55px 0}.section-heading{align-items:start;flex-direction:column}.footer-grid{grid-template-columns:1fr}
 }
+
+/* MewMigo image assets */
+.logo{flex:0 0 auto}
+.logo-image{display:block;width:190px;height:auto;max-height:58px;object-fit:contain;object-position:left center}
+.hero-art{position:relative;min-height:570px;overflow:hidden;background:#e9f0eb}
+.hero-image{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center center;display:block}
+.hero-art:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(253,248,243,.03),rgba(253,248,243,0) 55%);pointer-events:none}
+.hero-note,.hero-badge{z-index:2}
+@media(max-width:800px){
+  .logo-image{width:165px;max-height:54px}
+  .hero-art{min-height:380px}
+}
+@media(max-width:520px){
+  .hero-art{min-height:330px}
+}
