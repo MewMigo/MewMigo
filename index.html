@@ -1,800 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>MewMigo | Cat Supply Guides & Finds</title>
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>
+    MewMigo | Cat Supply Guides & Finds
+  </title>
 
   <meta
     name="description"
     content="Helpful cat-supply guides, product recommendations, and shopping finds for cat owners."
   >
 
-  <link rel="stylesheet" href="styles.css">
-
-  <!-- MewMigo hero layout -->
-  <style>
-
-    /* =========================================
-       FULL-WIDTH HERO
-       ========================================= */
-
-    .hero {
-      width: 100% !important;
-      margin: 0 !important;
-      padding: 0 !important;
-      overflow: hidden !important;
-    }
-
-
-    /* Hero container */
-
-    .hero-wrap {
-      position: relative !important;
-
-      width: 100% !important;
-      min-height: 560px !important;
-
-      margin: 0 !important;
-
-      border-radius: 0 0 28px 28px !important;
-
-      overflow: hidden !important;
-
-      /*
-        The cat image is now the actual
-        background of the entire hero.
-      */
-
-      background-image:
-        url("https://mewmigo.github.io/MewMigo/images/mewmigo-hero.png") !important;
-
-      background-size: cover !important;
-
-      background-position: center center !important;
-
-      background-repeat: no-repeat !important;
-
-      display: flex !important;
-
-      align-items: center !important;
-    }
-
-
-    /* =========================================
-       SOFT FADE BEHIND TEXT
-       ========================================= */
-
-    .hero-wrap::before {
-
-      content: "" !important;
-
-      position: absolute !important;
-
-      inset: 0 !important;
-
-      z-index: 1 !important;
-
-      pointer-events: none !important;
-
-      background:
-        linear-gradient(
-          90deg,
-
-          rgba(253, 248, 243, 0.98) 0%,
-
-          rgba(253, 248, 243, 0.94) 28%,
-
-          rgba(253, 248, 243, 0.72) 46%,
-
-          rgba(253, 248, 243, 0.22) 67%,
-
-          rgba(253, 248, 243, 0) 82%
-        ) !important;
-    }
-
-
-    /* =========================================
-       HERO TEXT
-       ========================================= */
-
-    .hero-copy-wrap {
-
-      position: relative !important;
-
-      z-index: 3 !important;
-
-      width: 100% !important;
-
-      max-width: 1200px !important;
-
-      margin: 0 auto !important;
-
-      padding: 80px 50px !important;
-
-      box-sizing: border-box !important;
-    }
-
-
-    .hero-copy-wrap > div {
-
-      max-width: 540px !important;
-    }
-
-
-    .hero-copy-wrap h1 {
-
-      max-width: 520px !important;
-    }
-
-
-    .hero-copy {
-
-      max-width: 500px !important;
-    }
-
-
-    /* =========================================
-       BUTTONS
-       ========================================= */
-
-    .hero-actions {
-
-      position: relative !important;
-
-      z-index: 5 !important;
-    }
-
-
-    .hero-actions .btn {
-
-      position: relative !important;
-
-      z-index: 6 !important;
-
-      pointer-events: auto !important;
-    }
-
-
-    /* =========================================
-       DECORATIVE HERO ELEMENTS
-       ========================================= */
-
-    .hero-art {
-
-      position: absolute !important;
-
-      inset: 0 !important;
-
-      width: 100% !important;
-
-      height: 100% !important;
-
-      z-index: 0 !important;
-
-      pointer-events: none !important;
-    }
-
-
-    /*
-      The old image element is no longer used
-      because the image is now the background.
-    */
-
-    .hero-art .hero-image {
-
-      display: none !important;
-    }
-
-
-    /* "Because they're family." */
-
-    .hero-note {
-
-      position: absolute !important;
-
-      right: 7% !important;
-
-      top: 14% !important;
-
-      z-index: 2 !important;
-
-      font-size: 1rem !important;
-
-      font-weight: 700 !important;
-
-      transform: rotate(-4deg) !important;
-
-      pointer-events: none !important;
-    }
-
-
-    /* "Good cats. Brighter days." */
-
-    .hero-badge {
-
-      position: absolute !important;
-
-      right: 6% !important;
-
-      bottom: 12% !important;
-
-      z-index: 2 !important;
-
-      pointer-events: none !important;
-    }
-
-
-    /* =========================================
-       TABLET
-       ========================================= */
-
-    @media (max-width: 900px) {
-
-      .hero-wrap {
-
-        min-height: 540px !important;
-
-        background-position: 62% center !important;
-      }
-
-
-      .hero-wrap::before {
-
-        background:
-          linear-gradient(
-            90deg,
-
-            rgba(253, 248, 243, 0.99) 0%,
-
-            rgba(253, 248, 243, 0.94) 42%,
-
-            rgba(253, 248, 243, 0.62) 65%,
-
-            rgba(253, 248, 243, 0.12) 100%
-          ) !important;
-      }
-
-
-      .hero-copy-wrap {
-
-        padding: 70px 40px !important;
-      }
-    }
-
-
-    /* =========================================
-       MOBILE
-       ========================================= */
-
-    @media (max-width: 600px) {
-
-      .hero-wrap {
-
-        min-height: 590px !important;
-
-        align-items: flex-start !important;
-
-        background-position: 70% center !important;
-      }
-
-
-      .hero-wrap::before {
-
-        background:
-          linear-gradient(
-            180deg,
-
-            rgba(253, 248, 243, 0.99) 0%,
-
-            rgba(253, 248, 243, 0.96) 40%,
-
-            rgba(253, 248, 243, 0.70) 67%,
-
-            rgba(253, 248, 243, 0.12) 100%
-          ) !important;
-      }
-
-
-      .hero-copy-wrap {
-
-        padding: 58px 28px 40px !important;
-      }
-
-
-      .hero-copy-wrap > div {
-
-        max-width: 100% !important;
-      }
-
-
-      .hero-copy-wrap h1 {
-
-        max-width: 100% !important;
-      }
-
-
-      .hero-copy {
-
-        max-width: 100% !important;
-      }
-
-
-      .hero-note {
-
-        right: 8% !important;
-
-        top: auto !important;
-
-        bottom: 18% !important;
-
-        font-size: 0.9rem !important;
-      }
-
-
-      .hero-badge {
-
-        right: 7% !important;
-
-        bottom: 7% !important;
-      }
-
-    }
-
-  </style>
+  <!-- Main stylesheet -->
+  <link
+    rel="stylesheet"
+    href="styles.css"
+  >
 </head>
 
 
 <body>
 
 
-<!-- =========================================
-     HEADER
-     ========================================= -->
+  <!-- =====================================================
+       HEADER
+       ===================================================== -->
 
-<header class="site-header">
+  <header class="site-header">
 
-  <div class="container nav">
+    <div class="container nav">
 
-    <a class="logo" href="index.html">
 
-      <img
-        src="/MewMigo/images/mewmigo-logo.png"
-        alt="MewMigo - Good cat friends deserve good cat stuff."
-        class="logo-image"
-      >
-
-    </a>
-
-
-    <nav>
-
-      <a class="active" href="index.html">
-        Home
-      </a>
-
-      <a href="shop.html">
-        Shop
-      </a>
-
-      <a href="guides.html">
-        Cat Guides
-      </a>
-
-      <a href="shop.html">
-        Categories
-      </a>
-
-      <a href="about.html">
-        About
-      </a>
-
-    </nav>
-
-
-    <div class="header-search">
-
-      <span>⌕</span>
-
-      <input
-        type="search"
-        placeholder="Search for cat products..."
-        aria-label="Search for cat products"
-        onkeydown="if(event.key==='Enter') location.href='shop.html'"
-      >
-
-    </div>
-
-
-    <button
-      class="menu-toggle"
-      aria-label="Open menu"
-    >
-      ☰
-    </button>
-
-  </div>
-
-</header>
-
-
-
-<main>
-
-
-<!-- =========================================
-     HERO
-     ========================================= -->
-
-<section class="hero">
-
-  <div class="hero-wrap">
-
-
-    <!-- HERO TEXT -->
-
-    <div class="hero-copy-wrap">
-
-      <div>
-
-        <p class="eyebrow">
-          CAT PRODUCTS • GUIDES • FINDS
-        </p>
-
-
-        <h1>
-          Good cat friends deserve good cat stuff.
-        </h1>
-
-
-        <p class="hero-copy">
-
-          Curated cat products, helpful guides, and
-          simple recommendations for happier cats
-          and the people who love them.
-
-        </p>
-
-
-        <div class="hero-actions">
-
-          <a
-            class="btn primary"
-            href="shop.html"
-          >
-            Shop cat stuff →
-          </a>
-
-
-          <a
-            class="btn secondary"
-            href="guides.html"
-          >
-            Explore cat guides
-          </a>
-
-        </div>
-
-      </div>
-
-    </div>
-
-
-
-    <!-- HERO DECORATION -->
-
-    <div
-      class="hero-art"
-      aria-hidden="true"
-    >
-
-      <div class="hero-note">
-        Because they're family.
-      </div>
-
-
-      <div class="hero-badge">
-        ♡ Good cats. Brighter days.
-      </div>
-
-    </div>
-
-
-  </div>
-
-</section>
-
-
-
-<!-- =========================================
-     CATEGORIES
-     ========================================= -->
-
-<section class="section">
-
-  <div class="container">
-
-
-    <div class="section-heading">
-
-      <div>
-
-        <p class="eyebrow">
-          SHOP BY CATEGORY
-        </p>
-
-        <h2>
-          Find something your cat will love.
-        </h2>
-
-      </div>
-
-
-      <a
-        class="text-link"
-        href="shop.html"
-      >
-        View all →
-      </a>
-
-    </div>
-
-
-
-    <div class="category-grid">
-
-
-      <a
-        class="category-card"
-        href="shop.html?category=feeding"
-      >
-
-        <span>🥣</span>
-
-        <h3>
-          Food & Feeders
-        </h3>
-
-        <p>
-          Bowls, fountains & feeders
-        </p>
-
-      </a>
-
-
-
-      <a
-        class="category-card"
-        href="shop.html?category=litter"
-      >
-
-        <span>🧺</span>
-
-        <h3>
-          Litter
-        </h3>
-
-        <p>
-          Boxes & cleanup
-        </p>
-
-      </a>
-
-
-
-      <a
-        class="category-card"
-        href="shop.html?category=furniture"
-      >
-
-        <span>🌳</span>
-
-        <h3>
-          Cat Furniture
-        </h3>
-
-        <p>
-          Trees, beds & scratchers
-        </p>
-
-      </a>
-
-
-
-      <a
-        class="category-card"
-        href="shop.html?category=toys"
-      >
-
-        <span>🧶</span>
-
-        <h3>
-          Toys & Enrichment
-        </h3>
-
-        <p>
-          Play & activity
-        </p>
-
-      </a>
-
-
-
-      <a
-        class="category-card"
-        href="shop.html?category=grooming"
-      >
-
-        <span>🪮</span>
-
-        <h3>
-          Grooming
-        </h3>
-
-        <p>
-          Brushes & care
-        </p>
-
-      </a>
-
-
-
-      <a
-        class="category-card"
-        href="shop.html?category=travel"
-      >
-
-        <span>🎒</span>
-
-        <h3>
-          Travel & Safety
-        </h3>
-
-        <p>
-          Carriers & ID
-        </p>
-
-      </a>
-
-
-    </div>
-
-  </div>
-
-</section>
-
-
-
-<!-- =========================================
-     FEATURED PRODUCTS
-     ========================================= -->
-
-<section class="section soft">
-
-  <div class="container">
-
-
-    <div class="section-heading">
-
-      <div>
-
-        <p class="eyebrow">
-          FEATURED FINDS
-        </p>
-
-        <h2>
-          30 products to explore
-        </h2>
-
-      </div>
-
-
-      <a
-        class="text-link"
-        href="shop.html"
-      >
-        Shop all →
-      </a>
-
-    </div>
-
-
-    <div
-      id="featured-products"
-      class="product-grid"
-    ></div>
-
-
-  </div>
-
-</section>
-
-
-
-<!-- =========================================
-     GUIDES
-     ========================================= -->
-
-<section class="section">
-
-  <div class="container split-callout">
-
-
-    <div>
-
-      <p class="eyebrow">
-        MEWMIGO GUIDES
-      </p>
-
-
-      <h2>
-        Shopping help for the cat friends who care.
-      </h2>
-
-
-      <p>
-
-        Compare features, learn what to look for,
-        and explore products without digging through
-        an endless catalog.
-
-      </p>
-
-
-      <a
-        class="btn primary"
-        href="guides.html"
-      >
-        Explore cat guides →
-      </a>
-
-    </div>
-
-
-
-    <div class="quote-card">
-
-      <span>♡</span>
-
-      <h3>
-        Good stuff. Good cats.
-      </h3>
-
-      <p>
-
-        We focus on useful cat supplies and practical
-        buying information so you can spend less time
-        searching and more time with your cat.
-
-      </p>
-
-    </div>
-
-
-  </div>
-
-</section>
-
-
-</main>
-
-
-
-<!-- =========================================
-     FOOTER
-     ========================================= -->
-
-<footer>
-
-  <div class="container footer-grid">
-
-
-    <div>
+      <!-- MewMigo Logo -->
 
       <a
         class="logo"
         href="index.html"
+        aria-label="MewMigo Home"
       >
 
         <img
@@ -806,65 +55,558 @@
       </a>
 
 
-      <p>
+      <!-- Main Navigation -->
 
-        A cat-supply discovery site built for good
-        cat friends. We don't sell or ship products
-        ourselves.
+      <nav>
 
-      </p>
+        <a
+          class="active"
+          href="index.html"
+        >
+          Home
+        </a>
+
+        <a href="shop.html">
+          Shop
+        </a>
+
+        <a href="guides.html">
+          Cat Guides
+        </a>
+
+        <a href="shop.html">
+          Categories
+        </a>
+
+        <a href="about.html">
+          About
+        </a>
+
+      </nav>
+
+
+      <!-- Search -->
+
+      <div class="header-search">
+
+        <span aria-hidden="true">
+          ⌕
+        </span>
+
+        <input
+          type="search"
+          placeholder="Search for cat products..."
+          aria-label="Search for cat products"
+          onkeydown="if(event.key==='Enter') location.href='shop.html'"
+        >
+
+      </div>
+
+
+      <!-- Mobile Menu -->
+
+      <button
+        class="menu-toggle"
+        aria-label="Open menu"
+        type="button"
+      >
+        ☰
+      </button>
+
+
+    </div>
+
+  </header>
+
+
+
+  <!-- =====================================================
+       MAIN CONTENT
+       ===================================================== -->
+
+  <main>
+
+
+    <!-- ===================================================
+         HERO
+         =================================================== -->
+
+    <section class="hero">
+
+      <div class="hero-wrap">
+
+
+        <!-- Hero Text -->
+
+        <div class="hero-copy-wrap">
+
+          <div>
+
+            <p class="eyebrow">
+              CAT PRODUCTS • GUIDES • FINDS
+            </p>
+
+
+            <h1>
+              Good cat friends deserve good cat stuff.
+            </h1>
+
+
+            <p class="hero-copy">
+              Curated cat products, helpful guides, and simple
+              recommendations for happier cats and the people
+              who love them.
+            </p>
+
+
+            <!-- Hero Buttons -->
+
+            <div class="hero-actions">
+
+              <a
+                class="btn primary"
+                href="shop.html"
+              >
+                Shop cat stuff →
+              </a>
+
+
+              <a
+                class="btn secondary"
+                href="guides.html"
+              >
+                Explore cat guides
+              </a>
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!--
+          Decorative hero elements.
+
+          The actual cat photograph is now handled by
+          styles.css as the background of .hero-wrap.
+        -->
+
+        <div
+          class="hero-art"
+          aria-hidden="true"
+        >
+
+          <div class="hero-note">
+            Because they're family.
+          </div>
+
+
+          <div class="hero-badge">
+            ♡ Good cats. Brighter days.
+          </div>
+
+        </div>
+
+
+      </div>
+
+    </section>
+
+
+
+    <!-- ===================================================
+         SHOP BY CATEGORY
+         =================================================== -->
+
+    <section class="section">
+
+      <div class="container">
+
+
+        <div class="section-heading">
+
+          <div>
+
+            <p class="eyebrow">
+              SHOP BY CATEGORY
+            </p>
+
+            <h2>
+              Find something your cat will love.
+            </h2>
+
+          </div>
+
+
+          <a
+            class="text-link"
+            href="shop.html"
+          >
+            View all →
+          </a>
+
+        </div>
+
+
+
+        <div class="category-grid">
+
+
+          <!-- Feeding -->
+
+          <a
+            class="category-card"
+            href="shop.html?category=feeding"
+          >
+
+            <span>
+              🥣
+            </span>
+
+            <h3>
+              Food & Feeders
+            </h3>
+
+            <p>
+              Bowls, fountains & feeders
+            </p>
+
+          </a>
+
+
+          <!-- Litter -->
+
+          <a
+            class="category-card"
+            href="shop.html?category=litter"
+          >
+
+            <span>
+              🧺
+            </span>
+
+            <h3>
+              Litter
+            </h3>
+
+            <p>
+              Boxes & cleanup
+            </p>
+
+          </a>
+
+
+          <!-- Furniture -->
+
+          <a
+            class="category-card"
+            href="shop.html?category=furniture"
+          >
+
+            <span>
+              🌳
+            </span>
+
+            <h3>
+              Cat Furniture
+            </h3>
+
+            <p>
+              Trees, beds & scratchers
+            </p>
+
+          </a>
+
+
+          <!-- Toys -->
+
+          <a
+            class="category-card"
+            href="shop.html?category=toys"
+          >
+
+            <span>
+              🧶
+            </span>
+
+            <h3>
+              Toys & Enrichment
+            </h3>
+
+            <p>
+              Play & activity
+            </p>
+
+          </a>
+
+
+          <!-- Grooming -->
+
+          <a
+            class="category-card"
+            href="shop.html?category=grooming"
+          >
+
+            <span>
+              🪮
+            </span>
+
+            <h3>
+              Grooming
+            </h3>
+
+            <p>
+              Brushes & care
+            </p>
+
+          </a>
+
+
+          <!-- Travel -->
+
+          <a
+            class="category-card"
+            href="shop.html?category=travel"
+          >
+
+            <span>
+              🎒
+            </span>
+
+            <h3>
+              Travel & Safety
+            </h3>
+
+            <p>
+              Carriers & ID
+            </p>
+
+          </a>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- ===================================================
+         FEATURED PRODUCTS
+         =================================================== -->
+
+    <section class="section soft">
+
+      <div class="container">
+
+
+        <div class="section-heading">
+
+          <div>
+
+            <p class="eyebrow">
+              FEATURED FINDS
+            </p>
+
+            <h2>
+              30 products to explore
+            </h2>
+
+          </div>
+
+
+          <a
+            class="text-link"
+            href="shop.html"
+          >
+            Shop all →
+          </a>
+
+        </div>
+
+
+        <!--
+          products.js and app.js populate this area.
+        -->
+
+        <div
+          id="featured-products"
+          class="product-grid"
+        ></div>
+
+
+      </div>
+
+    </section>
+
+
+
+    <!-- ===================================================
+         MEWMIGO GUIDES
+         =================================================== -->
+
+    <section class="section">
+
+      <div class="container split-callout">
+
+
+        <!-- Guide Introduction -->
+
+        <div>
+
+          <p class="eyebrow">
+            MEWMIGO GUIDES
+          </p>
+
+
+          <h2>
+            Shopping help for the cat friends who care.
+          </h2>
+
+
+          <p>
+            Compare features, learn what to look for, and
+            explore products without digging through an
+            endless catalog.
+          </p>
+
+
+          <a
+            class="btn primary"
+            href="guides.html"
+          >
+            Explore cat guides →
+          </a>
+
+        </div>
+
+
+        <!-- Quote Card -->
+
+        <div class="quote-card">
+
+          <span>
+            ♡
+          </span>
+
+
+          <h3>
+            Good stuff. Good cats.
+          </h3>
+
+
+          <p>
+            We focus on useful cat supplies and practical
+            buying information so you can spend less time
+            searching and more time with your cat.
+          </p>
+
+        </div>
+
+
+      </div>
+
+    </section>
+
+
+  </main>
+
+
+
+  <!-- =====================================================
+       FOOTER
+       ===================================================== -->
+
+  <footer>
+
+    <div class="container footer-grid">
+
+
+      <!-- Footer Brand -->
+
+      <div>
+
+        <a
+          class="logo"
+          href="index.html"
+          aria-label="MewMigo Home"
+        >
+
+          <img
+            src="/MewMigo/images/mewmigo-logo.png"
+            alt="MewMigo - Good cat friends deserve good cat stuff."
+            class="logo-image"
+          >
+
+        </a>
+
+
+        <p>
+          A cat-supply discovery site built for good cat
+          friends. We don't sell or ship products ourselves.
+        </p>
+
+      </div>
+
+
+      <!-- Footer Navigation -->
+
+      <div>
+
+        <h4>
+          Explore
+        </h4>
+
+
+        <a href="shop.html">
+          Shop
+        </a>
+
+
+        <a href="guides.html">
+          Guides
+        </a>
+
+
+        <a href="about.html">
+          About
+        </a>
+
+
+        <a href="disclosure.html">
+          Affiliate Disclosure
+        </a>
+
+      </div>
+
 
     </div>
 
 
+    <!-- Copyright -->
 
-    <div>
+    <div class="container copyright">
 
-      <h4>
-        Explore
-      </h4>
-
-      <a href="shop.html">
-        Shop
-      </a>
-
-      <a href="guides.html">
-        Guides
-      </a>
-
-      <a href="about.html">
-        About
-      </a>
-
-      <a href="disclosure.html">
-        Affiliate Disclosure
-      </a>
+      © 2026 MewMigo.
+      Product prices and availability may change.
 
     </div>
 
-
-  </div>
-
-
-  <div class="container copyright">
-
-    © 2026 MewMigo.
-    Product prices and availability may change.
-
-  </div>
-
-</footer>
+  </footer>
 
 
 
-<!-- =========================================
-     JAVASCRIPT
-     ========================================= -->
+  <!-- =====================================================
+       JAVASCRIPT
+       ===================================================== -->
 
-<script src="products.js"></script>
+  <script src="products.js"></script>
 
-<script src="app.js"></script>
+  <script src="app.js"></script>
 
 
 </body>
+
 </html>
